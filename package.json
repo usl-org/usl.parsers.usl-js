@@ -1,6 +1,6 @@
 {
   "name": "@usl/usl-js",
-  "version": "0.0.01",
+  "version": "0.0.02",
   "description": "A USL Javascript parser for use as NodeJs module or in-browser.",
   "repository": {
     "type": "git",
