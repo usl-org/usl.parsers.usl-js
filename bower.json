@@ -1,0 +1,5 @@
+{
+  "name": "usl-js",
+  "version": "0.0.01",
+  "main": "dist/*"
+}
