@@ -1,4 +1,4 @@
-#USL JS
+# USL JS
 
 A JavaScript parser for [USL](http://usl.io).
 
