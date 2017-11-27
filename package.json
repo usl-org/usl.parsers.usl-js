@@ -1,5 +1,5 @@
 {
-  "name": "@usl/tooling.parsers.usl-js",
+  "name": "@usl/usl.js",
   "version": "0.0.01",
   "description": "A USL parser based on PyYAML written in CoffeScript and available for use as NodeJs module or in-browser.",
   "repository": {
