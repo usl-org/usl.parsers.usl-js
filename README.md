@@ -1,10 +1,6 @@
 #USL JS
 
-
-[![Build Status](https://travis-ci.org/usl-org/usl-js-parser.png)](https://travis-ci.org/usl-org/usl-js-parser)
-[![Dependency Status](https://david-dm.org/usl-org/usl-js-parser.png)](https://david-dm.org/usl-org/usl-js-parser)
-
-This is a JavaScript parser for [USL](http://usl.io)
+A JavaScript parser for [USL](http://usl.io).
 
 ### Contributing
 If you are interested in contributing some code to this project, thanks! - Watch this space :-)
