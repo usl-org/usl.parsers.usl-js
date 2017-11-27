@@ -1,5 +1,8 @@
 # USL JS
 
+
+[![npm version](https://badge.fury.io/js/%40usl%2Fusl-js.svg)](https://badge.fury.io/js/%40usl%2Fusl-js)
+
 A JavaScript parser for [USL](http://usl.io).
 
 ### Contributing
