@@ -1,27 +1,26 @@
-# usl.js
+#USL JS
 
-[![Build Status](https://travis-ci.org/raml-org/raml-js-parser.png)](https://travis-ci.org/raml-org/raml-js-parser)
-[![Dependency Status](https://david-dm.org/raml-org/raml-js-parser.png)](https://david-dm.org/raml-org/raml-js-parser)
 
-This is a JavaScript parser for [RAML](http://raml.org) version 0.8 as defined in the [0.8 RAML specification](https://github.com/raml-org/raml-spec/blob/master/raml-0.8.md)
+[![Build Status](https://travis-ci.org/usl-org/usl-js-parser.png)](https://travis-ci.org/usl-org/usl-js-parser)
+[![Dependency Status](https://david-dm.org/usl-org/usl-js-parser.png)](https://david-dm.org/usl-org/usl-js-parser)
 
-A newer [version](https://github.com/raml-org/raml-js-parser-2) is now available as a beta. It supports RAML 1.0 as well as RAML 0.8.
+This is a JavaScript parser for [USL](http://usl.io)
 
 ### Contributing
-If you are interested in contributing some code to this project, thanks! Please first [read and accept the Contributors Agreement](https://api-notebook.anypoint.mulesoft.com/notebooks#bc1cf75a0284268407e4).
+If you are interested in contributing some code to this project, thanks! - Watch this space :-)
 
-To discuss this project, please use its [github issues](https://github.com/raml-org/raml-js-parser/issues) or the [RAML forum](http://forums.raml.org/).
+To discuss this project, please use its [github issues](https://github.com/usl-org/usl.tooling.parsers.usl-js/issues).
 
 ## Usage for NodeJS
 
 ### Load
 
-Loading a RAML file is as easy as follows:
+Loading a USL file is as easy as follows:
 
 ```javascript
-  var raml = require('raml-parser');
+  var usl = require('usl-js');
 
-  raml.loadFile('myAPI.raml').then( function(data) {
+  usl.loadFile('myAPI.usl').then( function(data) {
     console.log(data);
   }, function(error) {
     console.log('Error parsing: ' + error);
@@ -31,34 +30,34 @@ Loading a RAML file is as easy as follows:
 You can alternatively load from a string containing the api definition:
 
 ```javascript
-  var raml = require('raml-parser');
+  var usl = require('usl-js');
 
   var definition = [
-    '#%RAML 0.8',
+    '#%USL 0.1',
     '---',
     'title: MyApi',
     'baseUri: http://myapi.com',
     '/Root:'
   ].join('\n');
 
-  raml.load(definition).then( function(data) {
+  usl.load(definition).then( function(data) {
     console.log(data);
   }, function(error) {
     console.log('Error parsing: ' + error);
   });
 ```
 
-The shape of the returned object is (unofficially) documented in this [Typescript interface](https://github.com/aldonline/raml-typescript).
+The shape of the returned object is (unofficially) documented in this [Typescript interface](https://github.com/aldonline/usl-typescript).
 
 ### Abstract Syntax Tree
 
-Generating an AST from a RAML file is as easy as follows:
+Generating an AST from a USL file is as easy as follows:
 
 ```javascript
-  var raml = require('raml-parser');
+  var usl = require('usl-js');
 
   var myAPI;
-  raml.composeFile('myAPI.raml').then( function(rootNode) {
+  usl.composeFile('myAPI.usl').then( function(rootNode) {
     console.log('Root Node: ' + rootNode)
   }, function(error) {
     console.log('Error parsing: ' + error);
@@ -68,17 +67,17 @@ Generating an AST from a RAML file is as easy as follows:
 you can also alternatively generate an AST from a string containing the api definition:
 
 ```javascript
-  var raml = require('raml-parser');
+  var usl = require('usl-js');
 
   var definition = [
-    '#%RAML 0.8',
+    '#%USL 0.1',
     '---',
     'title: MyApi',
     'baseUri: http://myapi.com',
     '/Root:'
   ].join('\n');
 
-  raml.compose(definition).then( function(rootNode) {
+  usl.compose(definition).then( function(rootNode) {
     console.log('Root Node: ' + rootNode)
   }, function(error) {
     console.log('Error parsing: ' + error);
@@ -87,18 +86,18 @@ you can also alternatively generate an AST from a string containing the api defi
 
 ## Usage for In-Browser
 
-Using the RAML parser from inside the browser requires the user to actually
-include the RAML javascript file in a script tag as follows:
+Using the USL parser from inside the browser requires the user to actually
+include the USL javascript file in a script tag as follows:
 
 ```html
-<script src="raml-parser.min.js"></script>
+<script src="usl-js.min.js"></script>
 ```
 
 from there on the usage is pretty much the same as NodeJS, the script
-defines a *RAML.Parser* object globally which can be used as follows:
+defines a *USL.Parser* object globally which can be used as follows:
 
 ```javascript
-RAML.Parser.loadFile('http://localhost:9001/myAPI.raml').then( function(data) {
+USL.Parser.loadFile('http://localhost:9001/myAPI.usl').then( function(data) {
   console.log(data)
 }, function(error) {
   console.log('Error parsing: ' + error);
